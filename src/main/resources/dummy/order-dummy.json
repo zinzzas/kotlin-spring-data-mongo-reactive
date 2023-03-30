@@ -1,0 +1,83 @@
+{
+    "orderNo": "20230122000001",
+    "orderPocType": "10",
+    "orderMediaCode": "40",
+    "customerNo": "9999999999",
+    "customer": {
+        "customerBase": {
+            "customerNo": "9999999999",
+            "customerType": "10",
+            "customerGradeCode": "10",
+            "emailAddress": "jp1020@naver.com",
+            "phoneNumber": "01077007771",
+            "genderType": "M"
+        }
+    },
+    "orderSummary": {
+        "orderBase": {
+            "orderPayAmount": 10785000,
+            "deliveryPayAmount": 0,
+            "customerMessage": "빠른 배송 부탁합니다."
+        },
+        "orderDetails": [
+            {
+                "orderProductSeq": 1,
+                "deliverySeq": "1",
+                "deliveryPolicyNo": "1",
+                "productNo": "A000000102471",
+                "itemNo": "003",
+                "orderQty": 100,
+                "salePrice": 38000,
+                "discountPrice": 0,
+                "cartNo": "1"
+            },
+            {
+                "orderProductSeq": 2,
+                "deliverySeq": "1",
+                "deliveryPolicyNo": "1",
+                "productNo": "A000000102471",
+                "itemNo": "001",
+                "orderQty": 91,
+                "salePrice": 35000,
+                "discountPrice": 0,
+                "cartNo": "2"
+            }
+        ],
+        "orderDeliverys": [
+            {
+                "deliverySeq": 1,
+                "deliveryShipCode": "20",
+                "deliveryName": "기본배송지",
+                "receiverName": "한가라마",
+                "receiverPhoneNumber": "01088887777",
+                "receiverPostNo": 111222,
+                "receiverPostAddress": "경기도 하남시 감일순환로 999",
+                "receiverDetailAddress": "403-1103"
+            }
+        ],
+        "orderPays": [
+            {
+                "orderPay": {
+                    "payMethod": "card",
+                    "orderPayAmount": 5392500,
+                    "remainAmount": 5392500
+                },
+                "payProcSeq": 1,
+                "payTotalAmount": 10785000
+            },
+            {
+                "orderPay": {
+                    "payMethod": "point",
+                    "orderPayAmount": 5392500,
+                    "remainAmount": 5392500
+                },
+                "payProcSeq": 2,
+                "payTotalAmount": 10785000
+            }
+        ]
+    },
+    "insertId": "MOBILE",
+    "insertDate": "2022-12-18T08:53:07.000+00:00",
+    "updateId": "MOBILE",
+    "updateDate": "2013-12-18T08:53:07.000+00:00"
+}

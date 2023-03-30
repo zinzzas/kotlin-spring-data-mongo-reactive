@@ -1,0 +1,24 @@
+### allOrders
+GET http://localhost:8899/order/allOrders
+
+> {%
+    client.test("주문 내역을 조회 한다.", function () {
+        client.assert(response.status === 200)
+
+        response.body.forEach(function (x) {
+            client.assert(x.hasOwnProperty("orderNo"))
+            client.assert(x.hasOwnProperty("customer"))
+            client.assert(x.insertId === "MOBILE")
+        })
+    })
+%}
+
+### findOneOrder
+GET http://localhost:8899/order/getOrderById/20230122000001
+
+> {%
+    client.test("주문 단건을 조회 한다.", function () {
+        client.assert(response.status === 200)
+        client.assert(response.body.orderNo === "20230122000001")
+    })
+%}
