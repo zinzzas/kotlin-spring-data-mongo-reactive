@@ -9,5 +9,5 @@ import pe.kotlin.mongo.core.domain.OrderRepository
 @Component
 class OrderComponent(private val orderRepository: OrderRepository) {
     suspend fun getAllOrders(): Flow<Order> = orderRepository.findAllOrders()
-    suspend fun getOrderById(orderNo: String): Order? = orderRepository.findOrderById(orderNo)
+    suspend fun getOrderById(orderNo: String): Order? = orderRepository.findOneById(orderNo)
 }

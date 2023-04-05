@@ -18,8 +18,8 @@ class OrderController(val orderService: OrderService) {
         return ResponseEntity<Any>(orderService.getAllOrders(), HttpStatus.OK)
     }
 
-    @GetMapping("/getOrderByOrderNo/{orderNo}")
-    suspend fun getOrderById(@PathVariable orderNo: String): ResponseEntity<Any>? {
-        return ResponseEntity<Any>(orderService.getOrderById(orderNo), HttpStatus.OK)
+    @GetMapping("/getOrder/{orderNo}")
+    suspend fun getOrder(@PathVariable orderNo: String): ResponseEntity<Any>? {
+        return ResponseEntity<Any>(orderService.getOrder(orderNo), HttpStatus.OK)
     }
 }

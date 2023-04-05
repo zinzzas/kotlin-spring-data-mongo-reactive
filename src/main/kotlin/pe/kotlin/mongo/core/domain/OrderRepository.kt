@@ -14,7 +14,7 @@ class OrderRepository(private val mongoTemplate: ReactiveMongoTemplate) {
        return mongoTemplate.find(Query(), Order::class.java).asFlow()
     }
 
-    suspend fun findOrderById(orderNo: String): Order? {
+    suspend fun findOneById(orderNo: String): Order? {
         return mongoTemplate.findOne(Query().addCriteria(Order::orderNo isEqualTo orderNo), Order::class.java).awaitSingleOrNull()
     }
 }
