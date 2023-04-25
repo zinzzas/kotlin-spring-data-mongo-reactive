@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  mongo-primary:
+    image: mongo:4.4.5
+    container_name: mongo-primary
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    # networks:
+    #   - batch_network
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+
+  mongo-secondary1:
+    image: mongo:4.4.5
+    container_name: mongo-secondary1
+    expose:
+      - 27018
+    ports:
+      - 27018:27017
+    # networks:
+    #   - batch_network
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+
+  mongo-secondary2:
+    image: mongo:4.4.5
+    container_name: mongo-secondary2
+    expose:
+      - 27019
+    ports:
+      - 27019:27017
+    # networks:
+    #   - batch_network
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0" ]
+
+  mongoku:
+    image: huggingface/mongoku
+    container_name: mongoku
+    ports:
+      - 3100:3100
+    depends_on:
+      - mongo1
+      - mongo2
+      - mongo3
+    # networks:
+    #   - batch_network
+    environment:
+      MONGOKU_DEFAULT_HOST: "mongodb://mongo1:27017"
