@@ -3,7 +3,7 @@ package pe.kotlin.mongo.core.component
 import kotlinx.coroutines.flow.Flow
 import org.springframework.stereotype.Component
 import pe.kotlin.mongo.core.domain.Order
-import pe.kotlin.mongo.core.domain.OrderRepository
+import pe.kotlin.mongo.core.repository.OrderRepository
 
 
 @Component

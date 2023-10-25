@@ -13,10 +13,16 @@ autoconfigure:
     - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
 
 management:
+  server:
+    port: 9191
   endpoints:
     web:
       exposure:
-        include: health
+        include: health, info, prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true
 
 mongodb:
   uri: mongodb://localhost:27017

@@ -14,6 +14,7 @@ plugins {
     kotlin("kapt") version "1.8.0"  //java annotation processing 시스템을 사용하기 위한
     kotlin("plugin.noarg") version "1.8.10"
     //kotlin("plugin.jpa") version "1.4.32" // JPA를 사용하기 위한 플러그인
+    kotlin("plugin.serialization") version "1.5.31" // kotlin serialization 사용을 위한 플러그인
     idea
 }
 
@@ -36,6 +37,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -44,7 +47,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8") // jdk8 이하 호환되는 표준라이브러리 제공을 위한
 
     //implementation("org.springframework.boot:spring-boot-starter-data-jpa") // JPA를 사용하기 위한 의존성
-    //annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+
+    implementation("io.micrometer:micrometer-registry-prometheus")
 
     //mapstruct
     implementation("org.mapstruct:mapstruct:1.5.3.Final")
